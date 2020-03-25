@@ -1,11 +1,12 @@
 import styled from '@emotion/styled'
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 4rem auto;
-  width: 70%;
+
+  @media screen and (min-width: 1270px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 const Article = styled.article`
@@ -13,7 +14,7 @@ const Article = styled.article`
   background-color: #26262f;
   padding: 2rem;
   border-radius: 0.25em;
-  //   box-shadow: 0 1px 6px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 6px rgba(255, 255, 255, 0.035);
 
   header {
     font-size: 3rem;
@@ -28,7 +29,7 @@ const Article = styled.article`
 `
 
 const Stats = ({ stats, isFindingNewStats = false }) => (
-  <Container>
+  <Wrapper>
     {isFindingNewStats ? (
       <p>Loading new stats</p>
     ) : (
@@ -47,7 +48,7 @@ const Stats = ({ stats, isFindingNewStats = false }) => (
         </Article>
       </>
     )}
-  </Container>
+  </Wrapper>
 )
 
 export default Stats

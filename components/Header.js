@@ -3,33 +3,23 @@ import Link from 'next/link'
 
 const StyledHeader = styled.header`
   background-color: #26262f;
-  padding: 0.5rem 10rem;
+  padding: 0.5rem 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   h1 {
     letter-spacing: 0.075em;
   }
 
-  a {
-    color: #0090e7;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.45em 0.85rem;
-    border-radius: 0.5em;
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 0.05em;
+  @media screen and (min-width: 660px) {
+    padding: 0.5rem 10rem;
   }
 `
 
 const Header = () => (
   <StyledHeader>
     <h1>CoronaVirus stats</h1>
-    <Link href="/countries">
-      <a>View countries</a>
-    </Link>
   </StyledHeader>
 )
 

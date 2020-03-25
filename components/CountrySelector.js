@@ -1,10 +1,5 @@
 import styled from '@emotion/styled'
 
-const Container = styled.div`
-  width: 70%;
-  margin: 4rem auto 0;
-`
-
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5em;
@@ -19,7 +14,7 @@ const StyledSelect = styled.select`
 `
 
 const CountrySelector = ({ currentCountry, updateStats, countries }) => (
-  <Container>
+  <div>
     <Label htmlFor="country">Filter by country</Label>
     <StyledSelect
       name="country"
@@ -27,13 +22,14 @@ const CountrySelector = ({ currentCountry, updateStats, countries }) => (
       defaultValue={currentCountry}
       onChange={updateStats}
     >
+      <option value="">Global</option>
       {countries.map(({ name, iso3: iso, iso2 }) => (
         <option key={iso2} value={iso}>
           {name}
         </option>
       ))}
     </StyledSelect>
-  </Container>
+  </div>
 )
 
 export default CountrySelector
