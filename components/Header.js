@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import Link from 'next/link'
 
 const StyledHeader = styled.header`
   background-color: #26262f;
